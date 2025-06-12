@@ -1,0 +1,29 @@
+nav {
+    background-color: #222;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a, nav span {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+nav a:hover, nav span:hover {
+    background-color: #555;
+}
+
+.dropdown-menu {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-item:hover {
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+}
