@@ -8,7 +8,9 @@ const Layout = () => {
   return (
     <>
       <Navbar/>
-      <Outlet />
+        <div className="layout-margen">
+          <Outlet />
+        </div>
       <Footer/>
     </>
   );

@@ -3,64 +3,47 @@ import { useState } from "react";
 import "./navbar.css";
 import { marcas } from "../../data";
 
-const Navbar=()=>{
-    const [showDropdown, setShowDropdown] = useState(false);
+const Navbar = () => {
+  const [mostrarDesplegable, setMostrarDesplegable] = useState(false);
 
-    const toggleDropdown = () => {
-      setShowDropdown(!showDropdown);
-    };  
-    return(
-        <nav>
-        <Link to="/">Home</Link>
-        <Link to="/quienes-somos">Quienes somos</Link>
-        <div 
-          className="dropdown"
-          onMouseEnter={() => setShowDropdown(true)}
-          onMouseLeave={() => setShowDropdown(false)}
-          style={{ display: "inline-block", position: "relative" }}
-        >
-          <span 
-            onClick={toggleDropdown} 
-            style={{ cursor: "pointer", padding: "0 10px" }}
-          >
-            Productos ▼
-          </span>
-          {showDropdown && (
-            <div 
-              className="dropdown-menu" 
-              style={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                backgroundColor: "white",
-                border: "1px solid #ccc",
-                padding: "5px 0",
-                zIndex: 1000,
-                minWidth: "150px"
-              }}
+  return (
+    <nav className="barra-navegacion">
+      <span className="logo-navegacion">CelularesYA</span>
+      <Link to="/" className="enlace-navegacion">Inicio</Link>
+      <Link to="/quienes-somos" className="enlace-navegacion">Quiénes somos</Link>
+      <div
+        className="desplegable-productos"
+        onMouseEnter={() => setMostrarDesplegable(true)}
+        onMouseLeave={() => setMostrarDesplegable(false)}
+      >
+        <span className="boton-desplegable">
+          Productos ▼
+        </span>
+        {mostrarDesplegable && (
+          <div className="menu-desplegable">
+            <Link
+              to="/productos"
+              className="item-desplegable"
+              onClick={() => setMostrarDesplegable(false)}
             >
-              <Link 
-                to="/productos" 
-                className="dropdown-item" 
-                style={{ display: "block", padding: "5px 15px", textDecoration: "none", color: "black" }}
+              Ver todos
+            </Link>
+            {marcas.map((marca) => (
+              <Link
+                key={marca.id}
+                to={`/productos/${marca.id}`}
+                className="item-desplegable"
+                onClick={() => setMostrarDesplegable(false)}
               >
-                Ver todos
+                {marca.nombre}
               </Link>
-              {marcas.map((marca) => (
-                <Link 
-                  key={marca.id} 
-                  to={`/productos/${marca.id}`} 
-                  className="dropdown-item" 
-                  style={{ display: "block", padding: "5px 15px", textDecoration: "none", color: "black" }}
-                >
-                  {marca.nombre}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-        <Link to="/contacto">Contacto</Link>
-      </nav>
-    )
-}
-export default Navbar
+            ))}
+          </div>
+        )}
+      </div>
+      <Link to="/contacto" className="enlace-navegacion">Contacto</Link>
+    </nav>
+  );
+};
+
+export default Navbar;

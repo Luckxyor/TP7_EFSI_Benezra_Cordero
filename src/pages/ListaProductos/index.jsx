@@ -1,33 +1,37 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { celulares, marcas } from '../../data';
+import CardCelular from '../../components/CardCelular';
 import './listaProductos.css';
-
 
 const ListaProductos = () => {
   const { idMarca } = useParams();
 
-  const filteredCelulares = idMarca
-    ? celulares.filter(celular => celular.marcaId === parseInt(idMarca))
-    : celulares;
+  let celularesFiltrados = celulares;
+  let nombreMarca = null;
 
-  const marcaNombre = idMarca
-    ? marcas.find(marca => marca.id === parseInt(idMarca))?.nombre
-    : null;
+  if (idMarca) {
+    const idMarcaNumero = parseInt(idMarca);
+    celularesFiltrados = celulares.filter(function(celular) {
+      return celular.marcaId === idMarcaNumero;
+    });
+
+    for (let i = 0; i < marcas.length; i++) {
+      if (marcas[i].id === idMarcaNumero) {
+        nombreMarca = marcas[i].nombre;
+        break;
+      }
+    }
+  }
 
   return (
-    <div>
-      <h1>{marcaNombre ? `Celulares de ${marcaNombre}` : 'Todos los celulares'}</h1>
-      <div className="product-list">
-        {filteredCelulares.map(celular => (
-          <div key={celular.id} className="product-card">
-            <Link to={`/producto/${celular.id}`}>
-              <img src={celular.fotos[0]} alt={celular.nombre} />
-              <h3>{celular.nombre}</h3>
-            </Link>
-            <p>{celular.descripcion}</p>
-            <p>Precio: ${celular.precio}</p>
-          </div>
+    <div className="contenedor-lista-productos">
+      <h1 className="titulo-lista-productos">
+        {nombreMarca ? `Celulares de ${nombreMarca}` : 'Todos los celulares'}
+      </h1>
+      <div className="lista-productos">
+        {celularesFiltrados.map((celular) => (
+          <CardCelular key={celular.id} {...celular} />
         ))}
       </div>
     </div>

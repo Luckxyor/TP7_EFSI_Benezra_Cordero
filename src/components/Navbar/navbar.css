@@ -1,29 +1,59 @@
-nav {
-    background-color: #222;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.barra-navegacion {
+  background: #222;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
-nav a, nav span {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 4px;
+.logo-navegacion {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #00bcd4;
+  margin-right: 40px;
 }
 
-nav a:hover, nav span:hover {
-    background-color: #555;
+.enlace-navegacion {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 25px;
 }
 
-.dropdown-menu {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+.enlace-navegacion:hover, .boton-desplegable:hover {
+  color: #00bcd4;
 }
 
-.dropdown-item:hover {
-    background-color: #eee;
-    color: #333;
-    cursor: pointer;
+.desplegable-productos {
+  position: relative;
+  margin-right: 25px;
 }
+
+.boton-desplegable {
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-desplegable {
+  display: block;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+  min-width: 170px;
+  z-index: 9999;
+}
+
+.item-desplegable {
+  display: block;
+  padding: 12px 22px;
+  color: #222;
+  text-decoration: none;
+}
+
+.item-desplegable:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
