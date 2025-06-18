@@ -19,7 +19,6 @@
 
 .enlace-producto {
   text-decoration: none;
-  color: inherit;
   width: 100%;
   text-align: center;
 }
@@ -35,13 +34,13 @@
 
 .nombre-producto {
   margin: 10px 0 5px;
-  font-size: 1.15rem;
+  font-size: 20px;
   color: #222;
 }
 
 .descripcion-producto {
   margin: 0 0 8px;
-  font-size: 0.97rem;
+  font-size: 16px;
   color: #444;
 }
 

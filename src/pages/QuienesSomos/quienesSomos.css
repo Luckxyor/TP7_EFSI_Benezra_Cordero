@@ -1,10 +1,9 @@
-.contendor-quienes {
-  max-width: 900px;
-  margin: 40px auto 0 auto;
+.contenedor-quienes {
+  min-width: 50vw;
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  padding: 32px 28px;
+  padding: 30px;
 }
 
 .contendor-quienes h1 {
@@ -21,14 +20,14 @@
 
 .contendor-quienes p {
   font-size: 1.15rem;
-  color: #333;
+  color: #000;
   text-align: center;
 }
 
 .fotos-oficinas {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
+  width: 100%;
   margin-top: 28px;
   flex-wrap: wrap;
 }
@@ -39,6 +38,5 @@
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  transition: transform 0.2s, box-shadow 0.2s;
   background: #eee;
 }

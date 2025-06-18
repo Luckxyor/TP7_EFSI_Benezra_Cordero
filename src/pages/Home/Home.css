@@ -1,52 +1,7 @@
-.home-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.welcome-banner {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
 .carousel-inner img {
   max-height: 400px;
   object-fit: contain;
 }
-
-.random-phones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.phone-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-}
-
-.phone-card img {
-  max-width: 100%;
-  height: 200px;
-  border-radius: 4px;
-  object-fit:cover;
-}
-
-.phone-card h3 {
-  font-size: 1rem;
-  margin: 10px 0 5px;
-}
-
-.phone-card p {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
 
 #carouselRandom button span{
   background-color: #000;
@@ -111,16 +66,4 @@
   font-weight: bold;
   color: #2196f3;
   margin-top: 8px;
-}
-
-@media (max-width: 700px) {
-  .contenedor-celulares-destacados {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .tarjeta-celular-destacado {
-    width: 95vw;
-    max-width: 340px;
-  }
 }
